@@ -1,12 +1,19 @@
 package ocp;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Calculadora {
-    public int calcular(int a, int b, String operacao) {
-        if (operacao.equals("soma")) {
-            return a + b;
-        } else if (operacao.equals("subtracao")) {
-            return a - b;
+    private Map<String, Operacao> operacoes = new HashMap<>();
+    public void registrarOperacao(String nome, Operacao operacao) {
+        operacoes.put(nome, operacao);
+    }
+
+    public int calcular (String operacao, int a, int b) {
+        Operacao op = operacoes.get(operacao);
+        if (op == null) {
+            throw new IllegalArgumentException("Operação não suportada: " + operacao);
         }
-        return 0;
+        return op.calcular(a, b);
     }
 }
