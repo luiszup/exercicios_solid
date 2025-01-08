@@ -14,6 +14,6 @@ public class Servico {
 
     public void realizarSaque(Conta conta, double valor) {
         conta.sacar(valor);
-        notificacao.enviar("Saque de R$" + valor + "realizado. Saldo atual: " + conta.saldo);
+        notificacao.enviar("Saque de R$" + valor + " realizado. Saldo atual: " + conta.saldo);
     }
 }
