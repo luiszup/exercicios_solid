@@ -1,7 +1,7 @@
 package bonus;
 
 public abstract class Conta {
-    private double saldo;
+    protected double saldo;
 
     public Conta(double saldoInicial) {
         this.saldo = saldoInicial;
